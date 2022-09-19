@@ -58,7 +58,7 @@ const Home = () => {
               <div
                 className={`${
                   index % 2 == 0 ? "col-start-7" : "col-start-1"
-                } flex items-center col-end-${
+                } flex items-center ${
                   index % 2 == 0 ? "col-end-[-1]" : "col-end-7"
                 } row-start-1 row-end-1 ${
                   index % 2 == 0 ? "ml-auto" : "mr-auto"
