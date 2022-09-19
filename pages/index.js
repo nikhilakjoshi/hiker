@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { User } from "react-feather";
 import Level from "../components/Level";
@@ -48,27 +49,30 @@ const Home = () => {
               key={`lvl-${index}`}
             >
               <div
-                className={`col-start-${index % 2 == 0 ? "1" : "7"} col-end-${
-                  index % 2 == 0 ? "7" : "[-1]"
+                className={`${index % 2 == 0 ? "col-start-1" : "col-start-7"} ${
+                  index % 2 == 0 ? "col-end-7" : "col-end-[-1]"
                 } flex justify-center items-center`}
               >
                 <Level {...level} />
               </div>
               <div
-                className={`col-start-${
-                  index % 2 == 0 ? "7" : "1"
+                className={`${
+                  index % 2 == 0 ? "col-start-7" : "col-start-1"
                 } flex items-center col-end-${
-                  index % 2 == 0 ? "[-1]" : "7"
+                  index % 2 == 0 ? "col-end-[-1]" : "col-end-7"
                 } row-start-1 row-end-1 ${
                   index % 2 == 0 ? "ml-auto" : "mr-auto"
                 }
                 relative z-0 after:-z-10 after:rounded after:absolute after:w-full after:h-full after:-right-5 after:-bottom-5 after:bg-[#002916]
                 `}
               >
-                <img
+                <Image
                   src={level.imageLink}
-                  className="w-96 rounded"
+                  className="w-96 h-96 rounded"
                   alt="image1"
+                  layout="fixed"
+                  width={384}
+                  height={384}
                 />
               </div>
             </div>
